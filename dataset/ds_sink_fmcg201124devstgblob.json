@@ -1,0 +1,18 @@
+{
+	"name": "ds_sink_fmcg201124devstgblob",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LK_fmcg201124devstgblob",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileSystem": "outputcontainer"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

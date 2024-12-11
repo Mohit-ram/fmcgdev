@@ -1,0 +1,19 @@
+{
+	"name": "ds_source_fmcg201124devstgblob",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LK_fmcg201124devstgblob",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "SQLQuery1.sql",
+				"fileSystem": "inputcontainer"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

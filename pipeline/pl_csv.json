@@ -1,0 +1,61 @@
+{
+	"name": "pl_csv",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy data1",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "BinarySource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSettings",
+							"fileListPath": "inputcontainer/filelist.txt",
+							"deleteFilesAfterCompletion": false
+						},
+						"formatSettings": {
+							"type": "BinaryReadSettings"
+						}
+					},
+					"sink": {
+						"type": "BinarySink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						}
+					},
+					"enableStaging": false
+				},
+				"inputs": [
+					{
+						"referenceName": "ds_binary_csv",
+						"type": "DatasetReference",
+						"parameters": {
+							"containername": "inputcontainer"
+						}
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "ds_binary_csv",
+						"type": "DatasetReference",
+						"parameters": {
+							"containername": "outputcontainer"
+						}
+					}
+				]
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2024-12-07T08:08:13Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

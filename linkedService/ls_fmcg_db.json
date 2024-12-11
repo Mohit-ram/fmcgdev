@@ -1,0 +1,24 @@
+{
+	"name": "ls_fmcg_db",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"server": "fmcgsqldevdb.database.windows.net",
+			"database": "fmcgserver2",
+			"encrypt": "mandatory",
+			"trustServerCertificate": false,
+			"authenticationType": "SQL",
+			"userName": "fmcgserver",
+			"password": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "ls_fmcgkv",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "fmcgdbpwd"
+			}
+		}
+	}
+}
